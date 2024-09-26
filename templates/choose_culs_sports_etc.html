@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sport Selection</title>
+</head>
+<body style="text-align: center;">
+
+    <form action="{{ url_for('everything_submit') }}" method="post">
+        {% if 'sports' in chosen_categories %}
+    <h3>Select Your Favorite Sports</h3>
+    <input type="checkbox" name="sports" value="basketball" id="basketball">
+    <label for="basketball">Basketball</label><br>
+    
+    <input type="checkbox" name="sports" value="football" id="football">
+    <label for="football">Football</label><br>
+    
+    <input type="checkbox" name="sports" value="snooker" id="snooker">
+    <label for="snooker">Snooker</label><br>
+    <br><br>
+    {% endif %}
+
+    {% if 'culturals' in chosen_categories %}
+    <h3>Select Your Favorite Culturals</h3>
+    <input type="checkbox" name="culturals" value="dance" id="dance">
+    <label for="dance">Dance</label><br>
+    
+    <input type="checkbox" name="culturals" value="sing" id="sing">
+    <label for="sing">Sing</label><br>
+    
+    <input type="checkbox" name="culturals" value="act" id="act">
+    <label for="act">Act</label><br>
+    <br><br>
+    {% endif %}
+
+    {% if 'somethings' in chosen_categories %}
+    <h3>Select Your Favorite Something</h3>
+    <input type="checkbox" name="somethings" value="something1" id="something1">
+    <label for="something1">Something 1</label><br>
+
+    <input type="checkbox" name="somethings" value="something2" id="something2">
+    <label for="something2">Something 2</label><br>
+
+    <input type="checkbox" name="somethings" value="something3" id="something3">
+    <label for="something3">Something 3</label><br>
+    <br><br>
+    {% endif %}
+
+    <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

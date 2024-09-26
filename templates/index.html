@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align: center;">
+    <form action="{{ url_for('submit_basic') }}" method="post">
+        <h3>First Name</h3>
+        <input type="text" name="first_name" placeholder="First Name"><br>
+        <h3>Last Name</h3>
+        <input type="text" name="last_name" placeholder="Last Name">
+        <br>
+        <input type="submit">
+    </form>
+</body>
+</html>

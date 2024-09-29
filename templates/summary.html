@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Summary</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: #f9f9f9;
+        }
+        .table-striped tbody tr:nth-of-type(even) {
+            background-color: #d5f5e3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Event Summary</h1>
+        
+        {% if chosen_sports %}
+            <h2>Chosen Sports:</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Event</th>
+                        <th>Cost (₹)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for sport in chosen_sports %}
+                        <tr>
+                            <td>{{ sport_names[sport] }}</td>
+                            <td>{{ costs[sport] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+
+        {% if chosen_culturals %}
+            <h2>Chosen Cultural Events:</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Event</th>
+                        <th>Cost (₹)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for cultural in chosen_culturals %}
+                        <tr>
+                            <td>{{ cultural_names[cultural] }}</td>
+                            <td>{{ costs[cultural] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+
+        {% if chosen_management %}
+            <h2>Chosen Management Events:</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Event</th>
+                        <th>Cost (₹)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for management in chosen_management %}
+                        <tr>
+                            <td>{{ management_names[management] }}</td>
+                            <td>{{ costs[management] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+
+        <h3 class="mt-4">Total Cost: ₹{{ total_cost }}</h3>
+
+        <a href="{{ url_for('main') }}" class="btn btn-primary mt-3">Go to Home</a>
+    </div>
+</body>
+</html>

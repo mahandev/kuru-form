@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, url_for, redirect, session
 
 app = Flask(__name__)
-app.secret_key = 'tits'  # Required for session encryption
+app.secret_key = 'titties'  # Required for session encryption
 
 costs = {
     "badminton-men-single": 472,
